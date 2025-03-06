@@ -71,7 +71,8 @@ a {
 }
 
 a :hover, a :active {
-    color: #FFF;}
+    color: #FFF;
+}
 
 #nav {
     display: flex;

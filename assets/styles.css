@@ -1,4 +1,19 @@
 
+:root {
+    --color-brightwhite: #FFF;
+    --color-deepblack: #222;
+    --color-deeperblack: #111;
+    --color-vantablack: #000;
+    --color-selectables-idle:  #ff92c5;
+    --color-selectables-active: #FFF;
+    --color-selectables-disabled: #999;
+    --color-logo-grad1: #ff92c5;
+    --color-logo-grad2: #ffb0d5;
+    --color-logo-grad3: #da74a3;
+}
+
+/* --- BASIC STYLE SETUP ---*/
+
 .ubuntu-sans-400 {
     font-family: "Ubuntu Sans", sans-serif;
     font-optical-sizing: auto;
@@ -45,8 +60,8 @@
 } 
 
 html {
-    color: #FFF;
-    background-color: #000;
+    color: var(--color-brightwhite);
+    background-color: var(--color-vantablack);
     font-family: "Ubuntu Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -71,38 +86,72 @@ a {
 }
 
 a :hover, a :active {
-    color: #FFF;
+    color: var(--color-brightwhite);
 }
+
+/* --- END BASIC STYLE SETUP --- */
+/* --- NAVIGATION BAR --- */
 
 #nav {
     display: flex;
     justify-content: center;
-    background-color: #111;
+    background-color: var(--color-deeperblack);
 }
 
-#nav > a{
+#nav > a {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 0;
-    border-radius: 3pt;
-    color: #ff92c5;
+    /* background-color: var(--color-vantablack); */
+    color: var(--color-logo-grad1);
+    font-size: 14pt;
     margin: 8pt;
     transition: margin, color;
     transition-duration: .25s;
 }
 
+#nav > a:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: var(--color-vantablack); */
+    color: var(--color-logo-grad1);
+    text-shadow: var(--color-logo-grad1) 0 0 20pt;
+    font-size: 20pt;
+    margin: 8pt;
+    transition: margin, color;
+    transition-duration: .25s;
+    animation-name: logo-breath;
+    animation-duration: 5s;
+    animation-delay: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 #nav > a:hover, #nav > a:focus {
-    color: #FFF;
-    margin: 12pt;
-    margin-top: 8pt;
-    margin-bottom: 8pt;
+    color: var(--color-selectables-active);
+    margin: 24pt;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@keyframes logo-breath {
+    0% { color: var(--color-logo-grad1) }
+    25% { color: var(--color-logo-grad2) }
+    50% { color: var(--color-logo-grad1) }
+    80% { color: var(--color-logo-grad1) }
+    90% { color: var(--color-logo-grad3) }
+    100% { color: var(--color-logo-grad1) }
 }
 
 #nav > a > i {
     margin: 4pt;
 }
+
+/* --- END NAVIGATION BAR --- */
+/* --- CONTENT --- */
 
 #content {
     width: 75%;
@@ -129,13 +178,16 @@ a :hover, a :active {
     font-size: 24pt;
 }
 
+/* --- END CONTENT --- */
+/* --- FOOTER BAR --- */
+
 #footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #ccc;
-    background-color: #111;
+    background-color: var(--color-deeperblack);
     font-size: small;
     bottom: 0;
     position: absolute;
@@ -161,7 +213,12 @@ a :hover, a :active {
 .footer-links > p > a {
     display: flex;
     align-items: center;
-    color: #ff92c5;
+    color: var(--color-selectables-idle);
+}
+
+.footer-links > p > a:hover,
+.footer-links > p > a:active {
+    color: var(--color-brightwhite);
 }
 
 /* footer link icon spacing from text */
@@ -175,3 +232,9 @@ a :hover, a :active {
     /* margin-bottom: 0; */
 }
 
+/* --- END FOOTER BAR --- */
+/* --- MEDIA DEFINITIONS --- */
+@media screen {
+    
+}
+/* --- END MEDIA DEFINITIONS --- */

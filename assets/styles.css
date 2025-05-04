@@ -154,6 +154,8 @@ a :hover, a :active {
 /* --- CONTENT --- */
 
 #content {
+    display: flex;
+    flex-direction: column;
     width: 75%;
     margin: 2%;
     margin-right: 12.5%;
@@ -177,6 +179,25 @@ a :hover, a :active {
 #content-placeholder > i {
     font-size: 24pt;
 }
+
+.content-fullwidth {
+    width: 100%;
+    text-align: justify;
+}
+
+.content-fullheight {
+    height: 100%;
+}
+
+.takeover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
 
 /* --- END CONTENT --- */
 /* --- FOOTER BAR --- */
